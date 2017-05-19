@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DetectCharClass</class>
+ <widget class="QMainWindow" name="DetectCharClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1214</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IDCard OCR</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-image: url(:/img/img/back10.jpg);
+
+color: rgb(255, 255, 255);
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="ShowImg">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>681</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="lineWidth">
+     <number>0</number>
+    </property>
+    <property name="text">
+     <string>ShowImage</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="OpenImg">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>20</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Open</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Process">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>20</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>OCR</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_IDCard">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>60</y>
+      <width>481</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_clear1">
+    <property name="geometry">
+     <rect>
+      <x>1130</x>
+      <y>20</y>
+      <width>70</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Clear</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>701</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>560</y>
+      <width>481</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="testPushButton">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>10</y>
+       <width>70</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 10pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>test</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Tesseract Test</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>470</y>
+      <width>701</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QScrollBar{
+background:black; 
+ height:10px;
+}</string>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="textElideMode">
+     <enum>Qt::ElideRight</enum>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>20</number>
+    </attribute>
+    <attribute name="horizontalHeaderStretchLastSection">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>30</number>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
+     <number>20</number>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>姓名</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>性别</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>民族</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>出生</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>住址</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>公民身份号码</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>430</y>
+      <width>701</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string> Result Table</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_5">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>10</y>
+      <width>481</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QProgressBar" name="ocrProgressBar">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>20</y>
+       <width>121</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>微软雅黑</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 14pt &quot;微软雅黑&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string> IDCard OCR</string>
+     </property>
+    </widget>
+   </widget>
+   <zorder>groupBox_5</zorder>
+   <zorder>groupBox_3</zorder>
+   <zorder>groupBox_4</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>ShowImg</zorder>
+   <zorder>OpenImg</zorder>
+   <zorder>Process</zorder>
+   <zorder>textEdit_IDCard</zorder>
+   <zorder>pushButton_clear1</zorder>
+   <zorder>tableWidget</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>OpenImg</sender>
+   <signal>clicked()</signal>
+   <receiver>DetectCharClass</receiver>
+   <slot>ShowImg()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>750</x>
+     <y>69</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>347</x>
+     <y>49</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Process</sender>
+   <signal>clicked()</signal>
+   <receiver>DetectCharClass</receiver>
+   <slot>ProcessClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>840</x>
+     <y>69</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>276</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>OpenString()</slot>
+  <slot>ShowImg()</slot>
+  <slot>ProcessClicked()</slot>
+ </slots>
+</ui>
